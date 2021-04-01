@@ -6,22 +6,29 @@ import java.util.Collections;
 public class ShopApp {
 
     public static double calcTotal(Clothing[] clothing) {
+        double sum =0;
+        for (Clothing x : clothing) {
+            sum += x.getPrice();
 
-        return 0;
+        }
+        System.out.println("Total of Manager's cart: " + "\n" + sum);
+        return sum;
     }
 
     public static double employeePriceAfterDiscount(Employee employee) {
-
-        return 0;
+        System.out.println(employee.getDiscount()/100);
+        return employee.getDiscount();
     }
 
     public static boolean isAFit(Customer customer, Clothing clothing) {
-
+        boolean doesThisFit;
         if (customer.getSize() == clothing.getSize()) {
-            return true;
+            doesThisFit = true;
         } else {
-            return false;
+            doesThisFit = false;
         }
+        System.out.println("Checking if this clothing item fits: ");
+        return doesThisFit;
     }
 
     public static void sortAndPrintClothingByPrice(ArrayList<Clothing> clothes) {
@@ -36,7 +43,10 @@ public class ShopApp {
         System.out.println(employee.getName());
     }
 
-    public static void printDiscAmntOff(Discountable[] clothing) {
+    public static void printDiscAmntOff(Discountable[] clothing, Employee employee) {
+        for (Discountable x : clothing) {
+            //System.out.println(x.calcDiscount()
+        }
 
     }
 
@@ -46,31 +56,40 @@ public class ShopApp {
         Clothing clothing1 = new Clothing();
         Clothing clothing2 = new Clothing();
         Clothing clothing3 = new Clothing();
+
         clothing1.setSize('M');
         clothing2.setSize('L');
         clothing3.setSize('S');
+
         clothing1.setDescription("Shirt");
         clothing2.setDescription("Jeans");
         clothing3.setDescription("Jacket");
+
         clothing1.setPrice(10.00);
         clothing2.setPrice(12.99);
         clothing3.setPrice(5.99);
+
         Manager manager = new Manager("Phil",25,'L');
         manager.setSize('L');
         manager.setName("Phil");
         Clothing[] managerCartArray = {clothing1, clothing2, clothing3};
-        System.out.println("Managers cart total is : " + ((clothing1.getPrice() - manager.calcDiscount(clothing1)) + (clothing2.getPrice() - manager.calcDiscount(clothing2) + (clothing3.getPrice() - manager.calcDiscount(clothing3)))));
         manager.printEmpPriceAfterDisc(clothing1);
         manager.printEmpPriceAfterDisc(clothing2);
+
         System.out.println("Manager would pay " + (clothing1.getPrice() - manager.calcDiscount(clothing1)) + " for clothing item 1");
         System.out.println("Manager would pay " + (clothing2.getPrice() - manager.calcDiscount(clothing2)) + " for clothing item 2");
+
         System.out.println();
+
         HourlyEmployee hourlyEmployee = new HourlyEmployee("Bob",10, 'M');
         hourlyEmployee.setSize('L');
         hourlyEmployee.setName("Bob");
+
         Clothing[] employeeCartArray = {clothing1, clothing2, clothing3};
+
         hourlyEmployee.printEmpPriceAfterDisc(clothing1);
         hourlyEmployee.printEmpPriceAfterDisc(clothing2);
+
         System.out.println("Hourly employee would pay " + (clothing1.getPrice() - hourlyEmployee.calcDiscount(clothing1)) + " for clothing item 1");
         System.out.println("Hourly employee would pay " + (clothing2.getPrice() - hourlyEmployee.calcDiscount(clothing2)) + " for clothing item 2");
 
@@ -81,6 +100,9 @@ public class ShopApp {
         clothingitems.add(clothing2);
         clothingitems.add(clothing3);
 
+        employeePriceAfterDiscount(hourlyEmployee);
+        employeePriceAfterDiscount(manager);
+
         for (Clothing x : clothingitems) {
             System.out.println(x);
         }
@@ -89,6 +111,10 @@ public class ShopApp {
         printEmployeeName(hourlyEmployee);
 
         sortAndPrintClothingByPrice(clothingitems);
+
+        //outputs
+        calcTotal(managerCartArray);
+
 
 
     }
