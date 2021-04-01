@@ -42,9 +42,7 @@ public class ShopApp {
         for (Discountable x : discountableEmployees) {
             System.out.println(x.calcDiscount(clothing));
         }
-
     }
-
 
     public static void main(String[] args) {
 
@@ -86,17 +84,11 @@ public class ShopApp {
         calcTotal(managerCartArray);
         System.out.println(isAFit(hourlyEmployee, clothing2));
 
-        System.out.println("Hourly Employee price for " + clothing2.getDescription() + " after discount: ");
-        System.out.println(clothing2.getPrice() - hourlyEmployee.calcDiscount(clothing2));
+        hourlyEmployee.printEmpPriceAfterDisc(clothing2);
+        hourlyEmployee.printEmpPriceAfterDisc(clothing3);
 
-        System.out.println("Hourly Employee price for " + clothing3.getDescription() + " after discount: ");
-        System.out.println(clothing3.getPrice() - hourlyEmployee.calcDiscount(clothing3));
-
-        System.out.println("Manager price for " + clothing2.getDescription() + " after discount: ");
-        System.out.println(clothing2.getPrice() - manager.calcDiscount(clothing2));
-
-        System.out.println("Manager price for " + clothing3.getDescription() + " after discount: ");
-        System.out.println(clothing3.getPrice() - manager.calcDiscount(clothing3));
+        manager.printEmpPriceAfterDisc(clothing2);
+        manager.printEmpPriceAfterDisc(clothing3);
 
         System.out.println("Prior to sorting clothing objects by price : ");
         for (Clothing x : clothingitems) {
