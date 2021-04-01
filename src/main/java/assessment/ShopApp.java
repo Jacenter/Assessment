@@ -90,16 +90,17 @@ public class ShopApp {
         manager.printEmpPriceAfterDisc(clothing2);
         manager.printEmpPriceAfterDisc(clothing3);
 
-        System.out.println("Prior to sorting clothing objects by price : ");
+        System.out.println("\nPrior to sorting clothing objects by price : ");
         for (Clothing x : clothingitems) {
             System.out.println(x);
         }
+        System.out.print("\n");
         System.out.println("After sorting clothing objects by price : ");
         sortAndPrintClothingByPrice(clothingitems);
-        System.out.println("Printing each employee's name : ");
+        System.out.println("\nPrinting each employee's name : ");
         printEmployeeName(manager);
         printEmployeeName(hourlyEmployee);
-        System.out.println("Discount off specific item (jeans which I've made $20.00) for each type of employee :");
+        System.out.println("\nDiscount off specific item (jeans which I've made $20.00) for each type of employee :");
         printDiscAmntOff(discountables, clothing2);
 
 
