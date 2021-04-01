@@ -11,7 +11,7 @@ public class ShopApp {
             sum += x.getPrice();
 
         }
-        System.out.println("Total of Manager's cart: " + "\n" + sum);
+        System.out.println("Total of Manager's cart: " + "\n" + "$" + sum);
         return sum;
     }
 
@@ -40,7 +40,7 @@ public class ShopApp {
 
     public static void printDiscAmntOff(Discountable[] discountableEmployees, Clothing clothing) {
         for (Discountable x : discountableEmployees) {
-            System.out.println(x.calcDiscount(clothing));
+            System.out.println("$" + x.calcDiscount(clothing));
         }
     }
 
