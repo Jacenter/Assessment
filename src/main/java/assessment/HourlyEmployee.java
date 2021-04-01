@@ -10,7 +10,7 @@ public class HourlyEmployee extends Employee implements Discountable{
     @Override
     public void printEmpPriceAfterDisc(Clothing clothing) {
         double paymentAmount = clothing.getPrice() * (getDiscount()/100);
-        System.out.println("Your Hourly Employee price on " + clothing.getDescription() + " is : " + "\n" + "$" +  (clothing.getPrice() - paymentAmount));
+        System.out.println("Hourly Employee price for " + clothing.getDescription() + " after discount " + "\n"  +  (clothing.getPrice() - paymentAmount));
 
     }
 

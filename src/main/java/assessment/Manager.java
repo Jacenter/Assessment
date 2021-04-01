@@ -8,7 +8,7 @@ public class Manager extends Employee implements Discountable{
     @Override
     public void printEmpPriceAfterDisc(Clothing clothing) {
         double paymentAmount = clothing.getPrice() * (getDiscount() / 100);
-        System.out.println("Your Manager price on " + clothing.getDescription() + " is : " + "\n" + "$" + (clothing.getPrice() - paymentAmount));
+        System.out.println("Your Manager price for " + clothing.getDescription() + " after discount " + "\n"  + (clothing.getPrice() - paymentAmount));
     }
 
 

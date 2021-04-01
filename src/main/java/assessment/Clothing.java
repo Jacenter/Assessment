@@ -31,9 +31,10 @@ public class Clothing {
 
     @Override
     public String toString() {
-        return "Clothing : " +
-                 description + '\'' +
-                "| price: " + "$" + price +
-                " | size: " + size;
+        return "Clothing{" +
+                "description='" + description + '\'' +
+                ", price=" + price +
+                ", size=" + size +
+                '}';
     }
 }

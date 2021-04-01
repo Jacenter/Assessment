@@ -11,7 +11,7 @@ public class ShopApp {
             sum += x.getPrice();
 
         }
-        System.out.println("Total of Manager's cart: " + "\n" + "$" + sum);
+        System.out.println("Total of Manager's cart: " + "\n" + sum);
         return sum;
     }
 
@@ -22,14 +22,14 @@ public class ShopApp {
         } else {
             doesThisFit = false;
         }
-        System.out.println("Checking if this clothing item fits this customer : ");
+        System.out.println("Checking if this clothing item fits this customer ");
         return doesThisFit;
     }
 
     public static void sortAndPrintClothingByPrice(ArrayList<Clothing> clothes) {
         Collections.sort(clothes, new ClothingPriceComparator());
         for (Clothing x : clothes) {
-            System.out.println(x);
+            System.out.println(x.getPrice());
         }
 
     }
@@ -40,7 +40,7 @@ public class ShopApp {
 
     public static void printDiscAmntOff(Discountable[] discountableEmployees, Clothing clothing) {
         for (Discountable x : discountableEmployees) {
-            System.out.println("$" + x.calcDiscount(clothing));
+            System.out.println(x.calcDiscount(clothing));
         }
     }
 
@@ -95,12 +95,12 @@ public class ShopApp {
             System.out.println(x);
         }
         System.out.print("\n");
-        System.out.println("After sorting clothing objects by price : ");
+        System.out.println("After sorting - clothing items by price by Implementing the Comparator Interface!!!");
         sortAndPrintClothingByPrice(clothingitems);
-        System.out.println("\nPrinting each employee's name : ");
+        System.out.println("\nPrinting each type of Employee's name");
         printEmployeeName(manager);
         printEmployeeName(hourlyEmployee);
-        System.out.println("\nDiscount off specific item (jeans which I've made $20.00) for each type of employee :");
+        System.out.println("\nDiscount off specific clothing (jeans) for each employee..meaning how much discount they get off");
         printDiscAmntOff(discountables, clothing2);
 
 
